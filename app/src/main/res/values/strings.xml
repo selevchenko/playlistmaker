@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">playlist-maker-android-LevchenkoSergey</string>
+    <string name="app_title">Playlist Maker</string>
+
+    <!-- Главный экран -->
+    <string name="menu_search">Поиск</string>
+    <string name="menu_playlists">Плейлисты</string>
+    <string name="menu_favorites">Избранное</string>
+    <string name="menu_settings">Настройки</string>
+
+    <!-- Общие подписи -->
+    <string name="back">Назад</string>
+
+    <!-- Экран поиска -->
+    <string name="search_hint">Поиск</string>
+    <string name="clear_query">Очистить поисковый запрос</string>
+
+    <!-- Экран настроек -->
+    <string name="setting_theme">Тёмная тема</string>
+    <string name="setting_share">Поделиться приложением</string>
+    <string name="setting_write_support">Написать в поддержку</string>
+    <string name="setting_terms">Пользовательское соглашение</string>
+
+    <!-- Тексты, которые передаются во внешние приложения через Intent -->
+    <string name="share_app_text">Приложение Playlist Maker</string>
+
+    <!-- По заданию это имейл-адрес студента. Заглушка: замените на свой адрес. -->
+    <string name="student_email">student.email@example.com</string>
+
+    <string name="email_subject">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
+    <string name="email_body">Спасибо разработчикам и разработчицам за крутое приложение!</string>
+
+    <!-- Оферта на оказание образовательных услуг Яндекс Практикума -->
+    <string name="terms_url">https://yandex.ru/legal/praktikum_offer/</string>
+
+    <string name="no_app_to_handle">На устройстве нет приложения, которое может выполнить это действие</string>
+
+    <!-- Заглушки для экранов следующих спринтов -->
+    <string name="favorites_stub">Экран Избранного</string>
+    <string name="playlists_stub">Экран Плейлистов</string>
 </resources>
