@@ -22,11 +22,7 @@ import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistTextP
 import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistWhite
 
 /**
- * Временный экран деталей трека.
- *
- * В этом спринте мы только настраиваем связь «список результатов → экран деталей».
- * Финальная вёрстка и полноценная логика появятся в следующих спринтах,
- * поэтому сейчас экран показывает базовую информацию о треке.
+ * Экран деталей трека.
  */
 @Composable
 fun DetailsScreen(
@@ -63,12 +59,6 @@ fun DetailsScreen(
             Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = track.trackTime,
-                fontSize = 14.sp,
-                color = PlaylistHint
-            )
-            Spacer(modifier = Modifier.height(24.dp))
-            Text(
-                text = stringResource(R.string.details_stub),
                 fontSize = 14.sp,
                 color = PlaylistHint
             )

@@ -13,11 +13,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * Единственная Activity приложения.
- *
- * Навигация между экранами выполняется не через Intent и разные Activity,
- * а внутри Compose — через [PlaylistHost] и NavController.
- *
- * SearchViewModel создаёт Koin: фабрика вручную больше не нужна.
  */
 class MainActivity : ComponentActivity() {
 

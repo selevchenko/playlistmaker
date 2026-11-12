@@ -41,10 +41,7 @@ import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistTextP
 import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistWhite
 
 /**
- * Главный экран приложения: синяя шапка и список разделов.
- *
- * Экран ничего не знает про навигацию — он только сообщает наружу,
- * какой раздел выбрал пользователь.
+ * Главный экран приложения.
  */
 @Composable
 fun MainScreen(
@@ -56,7 +53,6 @@ fun MainScreen(
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        // Синий заголовок
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -74,7 +70,6 @@ fun MainScreen(
             )
         }
 
-        // Белая карточка с закруглёнными верхними углами
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -113,7 +108,7 @@ fun MainScreen(
 }
 
 /**
- * Строка меню главного экрана: иконка, название и стрелка вправо.
+ * Строка меню.
  */
 @Composable
 private fun MenuItem(

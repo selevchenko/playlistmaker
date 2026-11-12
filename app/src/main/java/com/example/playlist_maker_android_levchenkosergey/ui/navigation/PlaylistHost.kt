@@ -16,14 +16,7 @@ import com.example.playlist_maker_android_levchenkosergey.ui.view_model.SearchVi
 import com.google.gson.Gson
 
 /**
- * Единственная сущность, отвечающая за навигацию по приложению.
- *
- * Внутри собирается [NavHost] со всеми экранами, а переходы выполняются
- * методами, которые используют [NavController] и [Screen].
- *
- * @param navController контроллер навигации (наследник NavController), создаётся в Activity.
- * @param gson сериализатор для передачи выбранного трека на экран деталей.
- * @param searchViewModel ViewModel экрана поиска, созданная Koin в MainActivity.
+ * Навигация приложения.
  */
 @Composable
 fun PlaylistHost(
@@ -32,12 +25,10 @@ fun PlaylistHost(
     searchViewModel: SearchViewModel
 ) {
 
-    /** Переход на экран [screen] по его маршруту. */
     fun navigateTo(screen: Screen) {
         navController.navigate(screen.route)
     }
 
-    /** Возврат на предыдущий экран. */
     fun navigateBack() {
         navController.popBackStack()
     }
@@ -59,8 +50,7 @@ fun PlaylistHost(
             SearchScreen(
                 searchViewModel = searchViewModel,
                 onTrackClick = { track ->
-                    // Gson превращает Track в JSON, Uri.encode делает строку безопасной
-                    // для маршрута (названия треков могут содержать /, ?, & и пробелы).
+                    // Спецсимволы в названии трека не должны ломать маршрут.
                     val trackJson = Uri.encode(gson.toJson(track))
                     navController.navigate("${Screen.Details.route}/$trackJson")
                 },
@@ -68,7 +58,6 @@ fun PlaylistHost(
             )
         }
 
-        // Временный маршрут деталей трека: полноценный экран появится позже.
         composable(route = "${Screen.Details.route}/{trackJson}") { backStackEntry ->
             val trackJson = backStackEntry.arguments?.getString("trackJson")
             if (trackJson != null) {
@@ -84,8 +73,6 @@ fun PlaylistHost(
             SettingsScreen(onBackClick = { navigateBack() })
         }
 
-        // Экраны «Избранное» и «Плейлисты» появятся в следующих спринтах,
-        // пока для них оставлены заглушки, чтобы навигация не вела в пустоту.
         composable(route = Screen.Favorites.route) {
             StubScreen(
                 titleText = R.string.menu_favorites,

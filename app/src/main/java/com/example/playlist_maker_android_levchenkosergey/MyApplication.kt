@@ -7,13 +7,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
 /**
- * Application приложения.
- *
- * Koin запускается до создания Activity, поэтому к моменту, когда MainActivity
- * запрашивает SearchViewModel, граф зависимостей уже собран.
- *
- * Ручная сборка (`Creator`/фабрики в MyApplication) больше не нужна: этим
- * занимается DI-фреймворк.
+ * Application приложения. Запускает Koin.
  */
 class MyApplication : Application() {
 

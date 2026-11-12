@@ -62,14 +62,6 @@ import com.example.playlist_maker_android_levchenkosergey.ui.view_model.SearchVi
 
 /**
  * Экран поиска треков.
- *
- * Экран — это View из MVVM: он ничего не знает про репозиторий и сеть.
- * Он подписывается на [SearchViewModel.searchScreenState] и перерисовывается,
- * когда состояние меняется (Initial → Searching → Success/Fail).
- *
- * @param searchViewModel ViewModel экрана; создаётся Koin и передаётся из [PlaylistHost].
- * @param onTrackClick колбэк перехода на экран деталей выбранного трека.
- * @param onBackClick возврат на главный экран.
  */
 @Composable
 fun SearchScreen(
@@ -79,22 +71,18 @@ fun SearchScreen(
 ) {
     val screenState by searchViewModel.searchScreenState.collectAsState()
 
-    // rememberSaveable — чтобы запрос переживал пересоздание Activity (поворот экрана).
+    // Запрос переживает поворот экрана.
     var query by rememberSaveable { mutableStateOf("") }
 
     val focusManager = LocalFocusManager.current
 
-    // ViewModel живёт в Activity и переживает выход с экрана. Если пользователь
-    // вернулся на поиск с пустым полем, старые результаты показывать не нужно.
-    // При возврате с экрана деталей запрос восстанавливается из rememberSaveable,
-    // поэтому результаты остаются на месте.
+    // Новый вход с пустым полем не должен показывать старые результаты.
     LaunchedEffect(Unit) {
         if (query.isEmpty()) {
             searchViewModel.clearSearch()
         }
     }
 
-    // Поиск запускается и по иконке лупы, и по кнопке «Поиск» на клавиатуре.
     val runSearch = {
         if (query.isNotEmpty()) {
             searchViewModel.searchTracks(query)
@@ -145,7 +133,7 @@ fun SearchScreen(
                     value = query,
                     onValueChange = { newValue ->
                         query = newValue
-                        // Если строку стёрли целиком, старые результаты больше не актуальны.
+                        // Стёрли запрос — результаты больше не актуальны.
                         if (newValue.isEmpty()) {
                             searchViewModel.clearSearch()
                         }
@@ -162,7 +150,6 @@ fun SearchScreen(
                 )
             }
 
-            // Иконка очистки показывается только когда в поле есть текст.
             if (query.isNotEmpty()) {
                 IconButton(
                     onClick = {
@@ -193,7 +180,7 @@ fun SearchScreen(
 }
 
 /**
- * Отображает результаты поиска в зависимости от состояния экрана.
+ * Результаты поиска по состоянию экрана.
  */
 @Composable
 private fun SearchResults(
@@ -202,9 +189,7 @@ private fun SearchResults(
     modifier: Modifier = Modifier
 ) {
     when (screenState) {
-        is SearchState.Initial -> {
-            // Пользователь ещё ничего не искал — экран остаётся пустым.
-        }
+        is SearchState.Initial -> Unit
 
         is SearchState.Searching -> {
             Box(
@@ -249,7 +234,7 @@ private fun SearchResults(
 }
 
 /**
- * Информационное сообщение на весь экран: «ничего не найдено» или ошибка.
+ * Сообщение на весь экран.
  */
 @Composable
 private fun InformerState(
@@ -284,8 +269,7 @@ private fun InformerState(
 }
 
 /**
- * Один трек в списке результатов: иконка-заглушка, название, исполнитель,
- * длительность и стрелка перехода к деталям.
+ * Строка трека в результатах поиска.
  */
 @Composable
 private fun TrackListItem(

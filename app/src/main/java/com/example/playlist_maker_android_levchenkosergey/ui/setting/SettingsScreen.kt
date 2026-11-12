@@ -33,7 +33,6 @@ import androidx.compose.ui.unit.sp
 import com.example.playlist_maker_android_levchenkosergey.R
 import com.example.playlist_maker_android_levchenkosergey.ui.components.ScreenHeader
 import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistBlue
-import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistChevron
 import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistHint
 import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistSearchField
 import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistTextPrimary
@@ -41,17 +40,11 @@ import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistWhite
 
 /**
  * Экран настроек.
- *
- * Свёрстан по макету. Три пункта выполняют внешние действия через Intent:
- * «Поделиться приложением», «Написать в поддержку» и «Пользовательское соглашение».
- * Переключение тёмной темы появится позже как дополнительная задача —
- * сейчас сверстан только сам переключатель.
  */
 @Composable
 fun SettingsScreen(onBackClick: () -> Unit) {
     val context = LocalContext.current
 
-    // Все тексты — из strings.xml; в Intent они передаются отсюда через stringResource()
     val shareText = stringResource(R.string.share_app_text)
     val supportEmail = stringResource(R.string.student_email)
     val supportSubject = stringResource(R.string.email_subject)
@@ -69,13 +62,12 @@ fun SettingsScreen(onBackClick: () -> Unit) {
             onBackClick = onBackClick
         )
 
-        // Пункт «Тёмная тема»: вёрстка есть, логика переключения — в следующих спринтах
         SettingsRow(
             title = stringResource(R.string.setting_theme),
             trailing = {
                 Switch(
                     checked = false,
-                    onCheckedChange = { /* логика тёмной темы появится позже */ },
+                    onCheckedChange = { },
                     colors = SwitchDefaults.colors(
                         checkedTrackColor = PlaylistBlue,
                         uncheckedTrackColor = PlaylistSearchField
@@ -107,7 +99,7 @@ fun SettingsScreen(onBackClick: () -> Unit) {
 }
 
 /**
- * Строка настроек: название и элемент справа (иконка или переключатель).
+ * Строка настроек.
  */
 @Composable
 private fun SettingsRow(

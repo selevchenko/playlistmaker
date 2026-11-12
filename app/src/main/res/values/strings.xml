@@ -19,9 +19,8 @@
     <string name="check_connection">Проверьте подключение к интернету</string>
     <string name="open_track">Открыть трек</string>
 
-    <!-- Временный экран деталей трека -->
+    <!-- Экран деталей трека -->
     <string name="track_details_title">Детали трека</string>
-    <string name="details_stub">Экран деталей трека появится в следующих спринтах</string>
 
     <!-- Экран настроек -->
     <string name="setting_theme">Тёмная тема</string>
@@ -43,7 +42,4 @@
 
     <string name="no_app_to_handle">На устройстве нет приложения, которое может выполнить это действие</string>
 
-    <!-- Заглушки для экранов следующих спринтов -->
-    <string name="favorites_stub">Экран Избранного</string>
-    <string name="playlists_stub">Экран Плейлистов</string>
 </resources>

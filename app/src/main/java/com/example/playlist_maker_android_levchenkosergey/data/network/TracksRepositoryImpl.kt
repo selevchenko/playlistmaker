@@ -7,16 +7,7 @@ import com.example.playlist_maker_android_levchenkosergey.domain.model.Track
 import kotlinx.coroutines.delay
 
 /**
- * Реализация репозитория поиска треков.
- *
- * Пока данные учебные: вместо запроса в сеть класс фильтрует заранее заданный
- * список [tracksDto]. Задержка [SEARCH_DELAY_MILLIS] имитирует долгий сетевой
- * ответ, чтобы на экране было видно состояние загрузки.
- *
- * @param networkClient сетевой клиент. Сейчас не используется для фильтрации:
- * он понадобится, когда вместо локального списка появится реальный запрос.
- * Оставлен в конструкторе, чтобы DI-граф и сигнатура репозитория не менялись
- * при переходе на сеть.
+ * Репозиторий поиска по локальному списку треков.
  */
 class TracksRepositoryImpl(
     private val networkClient: NetworkClient
@@ -34,7 +25,7 @@ class TracksRepositoryImpl(
     )
 
     override suspend fun searchTracksContains(expression: String): List<Track> {
-        // Имитация обращения по сети: 3 секунды задержки.
+        // Задержка, чтобы было видно состояние загрузки.
         delay(SEARCH_DELAY_MILLIS)
 
         return tracksDto

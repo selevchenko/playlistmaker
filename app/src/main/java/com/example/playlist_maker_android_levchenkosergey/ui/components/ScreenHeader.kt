@@ -25,8 +25,7 @@ import com.example.playlist_maker_android_levchenkosergey.R
 import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistTextPrimary
 
 /**
- * Шапка внутреннего экрана: стрелка «назад» и заголовок.
- * Используется на экранах поиска, настроек и заглушках.
+ * Шапка внутреннего экрана: кнопка «назад» и заголовок.
  */
 @Composable
 fun ScreenHeader(
@@ -59,7 +58,7 @@ fun ScreenHeader(
 }
 
 /**
- * Временный экран-заглушка для разделов, которые появятся в следующих спринтах.
+ * Экран-заглушка.
  */
 @Composable
 fun StubScreen(
