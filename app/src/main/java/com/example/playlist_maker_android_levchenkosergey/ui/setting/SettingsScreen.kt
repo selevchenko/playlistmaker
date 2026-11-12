@@ -1,4 +1,4 @@
-package com.example.playlist_maker_android_levchenkosergey
+package com.example.playlist_maker_android_levchenkosergey.ui.setting
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -30,6 +30,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.playlist_maker_android_levchenkosergey.R
+import com.example.playlist_maker_android_levchenkosergey.ui.components.ScreenHeader
 import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistBlue
 import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistChevron
 import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistHint

@@ -1,4 +1,4 @@
-package com.example.playlist_maker_android_levchenkosergey
+package com.example.playlist_maker_android_levchenkosergey.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -21,6 +21,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.playlist_maker_android_levchenkosergey.R
 import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistTextPrimary
 
 /**

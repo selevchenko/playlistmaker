@@ -13,7 +13,15 @@
 
     <!-- Экран поиска -->
     <string name="search_hint">Поиск</string>
+    <string name="search_icon">Искать</string>
     <string name="clear_query">Очистить поисковый запрос</string>
+    <string name="no_tracks_found">Ничего не найдено</string>
+    <string name="check_connection">Проверьте подключение к интернету</string>
+    <string name="open_track">Открыть трек</string>
+
+    <!-- Временный экран деталей трека -->
+    <string name="track_details_title">Детали трека</string>
+    <string name="details_stub">Экран деталей трека появится в следующих спринтах</string>
 
     <!-- Экран настроек -->
     <string name="setting_theme">Тёмная тема</string>

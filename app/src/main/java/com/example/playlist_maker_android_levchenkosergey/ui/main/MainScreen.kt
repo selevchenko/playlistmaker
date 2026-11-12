@@ -1,4 +1,4 @@
-package com.example.playlist_maker_android_levchenkosergey
+package com.example.playlist_maker_android_levchenkosergey.ui.main
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -16,8 +16,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.automirrored.filled.QueueMusic
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.HorizontalDivider
@@ -33,6 +33,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.playlist_maker_android_levchenkosergey.R
 import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistBlue
 import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistChevron
 import com.example.playlist_maker_android_levchenkosergey.ui.theme.PlaylistDivider

@@ -1,4 +1,4 @@
-package com.example.playlist_maker_android_levchenkosergey
+package com.example.playlist_maker_android_levchenkosergey.ui.navigation
 
 /**
  * Список экранов приложения.
@@ -12,5 +12,8 @@ enum class Screen(val route: String) {
     Search("search"),
     Settings("settings"),
     Favorites("favorites"),
-    Playlists("playlists")
+    Playlists("playlists"),
+
+    /** Временный экран деталей: маршрут-основа, полный путь — details/{trackJson}. */
+    Details("details")
 }

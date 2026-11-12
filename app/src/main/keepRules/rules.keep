@@ -10,3 +10,7 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+# Gson на экране деталей читает поля Track через рефлексию.
+# Без этого правила release-сборка с R8 может вырезать поля модели.
+-keep class com.example.playlist_maker_android_levchenkosergey.domain.model.** { *; }
